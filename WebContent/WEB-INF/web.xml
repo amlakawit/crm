@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>customer-tracker</display-name>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+   
+  </welcome-file-list>
+
+<!-- Configure DispatcherServlet -->
+  <servlet>
+  	<!-- reference to the Spring MVC DiapatcherServlet(Front Controller). Give  		the name(can be any name) and class of the servlet-->
+    <servlet-name>dispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    
+    	<!-- setup initial parameter: tell the system where the spring configuration 	context is 	located-->
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/crm-config.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <!-- Setup URL mapping mapping: tell the system for the  URL pattern coming in to pass it off to the DispatcherServlet(in the example below the URL  pattern is "/", meaning all web request coming in should be handled by the DispatcherServlet 
+servlet-name  )-->
+  <servlet-mapping>
+    <servlet-name>dispatcher</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+</web-app>

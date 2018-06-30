@@ -1,0 +1,7 @@
+.classpath
+.project
+.settings/
+build/
+sql_scripts/
+WebContent/META-INF/
+WebContent/WEB-INF/lib/
